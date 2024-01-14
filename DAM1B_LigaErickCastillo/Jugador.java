@@ -2,16 +2,20 @@ package DAM1B_LigaErickCastillo;
 
 public class Jugador {
 
-
-    public String nombre;
-    public String nacionalidad;
-    public int edad;
-    public String posicion;
-    public boolean lesionado;
-
-    //Los get mencionados del diagrama
+    //Los cambie a private
+    private String nombre;
+    private String nacionalidad;
+    private int edad;
+    private valor posicion;
+    private boolean lesionado;
 
 
+    // Constructor
+    public Jugador() {
+        this.lesionado = false;
+    }
+
+    // Métodos de acceso
     public String getNombre() {
         return nombre;
     }
@@ -24,50 +28,31 @@ public class Jugador {
         return edad;
     }
 
-    public String getPosicion() { //
+    public valor getPosicion() {
         return posicion;
     }
 
-
-    //Posición del jugador
-
+    // Métodos adicionales
+    // Enum para la posición del jugador
     public enum valor { POR, DEF, CTC, DEL }
 
-    private void setPosicion (String nuevoValor){
-        this.posicion = nuevoValor;
-    }
-
-    public String getposicion(){
-        return this.posicion;
-    }
-
-
-    //Atributo lesionado y su valor
-
-    public Jugador(){
-        this.lesionado = false;
-    }
-
-    // valor lesionado
-    public boolean getlesionado() {
+    // Métodos para lesionado
+    public boolean getLesionado() {
         return this.lesionado;
     }
 
-    // valor lesionarse
-    public void lesionarse(){
-        System.out.println(" El jugador esta lesiona! ");
+    public void lesionarse() {
+        System.out.println("El jugador está lesionado.");
         this.lesionado = true;
     }
 
-    // valor recuperarse
-
-    public void recuperarse(){
-        System.out.println(" El jugador se a recuperado! ");
+    public void recuperarse() {
+        System.out.println("El jugador se ha recuperado.");
         this.lesionado = false;
     }
 
-     public static void Liga (String[]args){
-
+    public static void main(String[] args) {
+        // Código principal si es necesario
     }
 
 

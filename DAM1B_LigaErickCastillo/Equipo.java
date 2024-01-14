@@ -1,9 +1,10 @@
 package DAM1B_LigaErickCastillo;
+
 public class Equipo {
-    public String nombre;
-    public String ciudad;
+    private String nombre;
+    private String ciudad;
     public static final int NUM_MAX_JUGADORES = 22;
-    public Jugador[] listaJugadores;
+    private Jugador[] listaJugadores;
 
     // Constructor
     public Equipo() {
@@ -11,7 +12,7 @@ public class Equipo {
         listaJugadores = new Jugador[NUM_MAX_JUGADORES];
     }
 
-    // Métodos
+    // Métodos de acceso
     public String getNombre() {
         return nombre;
     }
@@ -20,24 +21,8 @@ public class Equipo {
         return ciudad;
     }
 
-    public int getNumJugadores() {
-        int numJugadores = 0;
-        for (Jugador jugador : listaJugadores) {
-            if (jugador != null) {
-                numJugadores++;
-            }
-        }
-        return numJugadores;
-    }
-
-    public void mostrarListaJugadores() {
-        System.out.println("Lista de Jugadores:");
-        for (Jugador jugador : listaJugadores) {
-            if (jugador != null) {
-                System.out.println(jugador.getNombre());
-            }
-        }
-    }
+    // Métodos adicionales
+    // ...
 
     public void adquirirJugador(Jugador jugador) {
         for (int i = 0; i < listaJugadores.length; i++) {
@@ -54,8 +39,9 @@ public class Equipo {
             if (listaJugadores[i] != null && listaJugadores[i].getNombre().equals(nombreJugador)) {
                 System.out.println("Jugador vendido: " + listaJugadores[i].getNombre());
                 listaJugadores[i] = null;
-                break;
+                return;
             }
         }
+        System.out.println("El jugador '" + nombreJugador + "' no se encontró en el equipo.");
     }
 }
